@@ -36,12 +36,12 @@ export class AddCustomerComponent implements OnInit {
       FirstName : ['',Validators.required],
       LastName : ['',Validators.required],
       Email : ['',[Validators.required ,Validators.email]],
-      Password : ['',[Validators.required,Validators.minLength(6),Validators.maxLength(10)]],
+      Password : ['',[Validators.required,Validators.pattern('(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>"\'\\;:\{\\\}\\\[\\\]\\\|\\\+\\\-\\\=\\\_\\\)\\\(\\\)\\\`\\\/\\\\\\]])[A-Za-z0-9\d$@].{7,}')]],
       MobileNo : ['',[Validators.required,Validators.minLength(10),Validators.maxLength(12)]],
       Address : ['',Validators.required],
       City : ['',Validators.required],
       State : ['',Validators.required],
-      Pincode : ['',Validators.required],
+      Pincode : ['',[Validators.required,Validators.minLength(6),Validators.maxLength(6)]],
 
 
     })
@@ -113,7 +113,7 @@ export class AddCustomerComponent implements OnInit {
   
   
 
-  email = new FormControl('', [Validators.required, Validators.email]);
+ /* email = new FormControl('', [Validators.required, Validators.email]);
   pass = new FormControl('',[Validators.required,Validators.minLength(6),Validators.maxLength(15)]);
   mobile = new FormControl('',[Validators.required,Validators.minLength(10)]);
   getpassErrorMessage(){
@@ -146,8 +146,27 @@ export class AddCustomerComponent implements OnInit {
    
 
     return this.mobile.hasError('mobile') ? 'Not a valid mobile' : '';
-  }
+  }*/
 
+
+  get FirstName(){
+    return this.AddCustomerForm.get('FirstName')
+  }
+  get LastName (){
+    return this.AddCustomerForm.get('LastName')
+  }
+  get Email(){
+    return this.AddCustomerForm.get('Email')
+  }
+  get Password (){
+    return this.AddCustomerForm.get('Password')
+  }
+  get MobileNo(){
+    return this.AddCustomerForm.get('MobileNo')
+  }
+  get Pincode (){
+    return this.AddCustomerForm.get('Pincode')
+  }
 
   
 
