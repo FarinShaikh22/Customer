@@ -1,0 +1,38 @@
+{
+  "CustomerList": [
+    {
+      "FirstName": "Farin",
+      "LastName": "Shaikh",
+      "Email": "farin.shaikh@neoquant.com",
+      "Password": "Farinshaikh@2296",
+      "MobileNo": "9075719618",
+      "Address": "Bhiwandi",
+      "City": "Bhiwandi",
+      "State": "Maharashtra",
+      "Pincode": "421308",
+      "id": 1
+    },
+    {
+      "FirstName": "Pallavi",
+      "LastName": "jagtap",
+      "Email": "pallavi@neoquant.com",
+      "Password": "pallavi",
+      "MobileNo": "4567896789",
+      "Address": "pune",
+      "City": "Pune",
+      "State": "Maharashtra",
+      "Pincode": "455676",
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

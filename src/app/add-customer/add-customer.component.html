@@ -1,0 +1,72 @@
+<h2 matDialogTitle>Add Customer Form</h2>
+
+<div mat-dialog-content>
+    <form [formGroup]="AddCustomerForm" name="AddCustomerForm" (ngSubmit)=onSubmit()>
+    <div class="form-group" style="color: #757575;"   action="#!">
+    <table class="example-full-width" cellspacing="0"><tr>
+        <td><mat-form-field  class="example-full-width" appearance="outline">
+          <mat-label>First name</mat-label>
+          <input formControlName = "FirstName" matInput>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Last Name </mat-label>
+          <input formControlName = "LastName"  matInput>
+        </mat-form-field></td>
+      </tr></table>
+      <mat-form-field  appearance="outline">
+        <mat-label>Enter your email</mat-label>
+        <input formControlName = "Email" matInput placeholder="pat@example.com" required>
+        <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+      </mat-form-field>
+    
+      <mat-form-field appearance="outline">
+        <mat-label>Enter your password</mat-label>
+        <input formControlName = "Password" name = "Password" matInput [type]="hide ? 'password' : 'text'" >
+        <mat-error *ngIf="pass.invalid">{{getpassErrorMessage()}} Password is Required
+        
+        <!--*ngIf="pass.invalid">{{getpassErrorMessage()}} Password At Least Minimum 6  --> 
+        </mat-error>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline" required>
+        <mat-label>Mobile Number</mat-label>
+        <input formControlName = "MobileNo"  type="tel" matInput placeholder="1234567890" required>
+        <mat-error *ngIf="pass.invalid">{{getmobilErrorMessage()}}</mat-error>
+        <mat-icon matSuffix>phone</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field  appearance="outline">
+        <mat-label>Address</mat-label>
+        <input  formControlName = "Address" matInput placeholder="Address">
+        <textarea matInput></textarea>
+      </mat-form-field>
+      <table class="example-full-width" cellspacing="2"><tr>
+        <td><mat-form-field  appearance="outline">
+        <mat-label>City</mat-label>
+        <input formControlName = "City" matInput placeholder="Andheri" required>
+      </mat-form-field></td>
+      <td><mat-form-field  appearance="outline">
+        <mat-label>State</mat-label>
+        <input formControlName = "State" matInput placeholder="Maharashtra">
+      </mat-form-field></td>
+    </tr>
+    <tr>
+    <td><mat-form-field  appearance="outline">
+        <mat-label>Pincode</mat-label>
+        <input formControlName = "Pincode" matInput placeholder="123456" required>
+      </mat-form-field></td>
+    </tr>
+      </table>
+
+      <div mat-dialog-actions [align]="'end'">
+         <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+         <button mat-raised-button color="primary" (click)="Add()">{{actionBtn}}</button>
+
+        
+      </div>
+
+</div>
+</form>
+</div>
